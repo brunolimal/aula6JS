@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let valorEmprestimo = parseFloat(prompt("Informe o valor do empréstimo:"));
+    let taxaJuros = parseFloat(prompt("Informe a taxa de juros (%):"));
+    let numeroParcelas = parseInt(prompt("Informe o número de parcelas:"));
+
+for (let i = 1; i <= numeroParcelas; i++) {
+    let valorParcela = (valorEmprestimo * taxaJuros / 100) / (1 - Math.pow(1 + taxaJuros / 100, -numeroParcelas));
+    alert("Parcela " + i + ": R$ " + valorParcela.toFixed(2));
+    valorEmprestimo -= valorParcela;
+    }
+</script>
